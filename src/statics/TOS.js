@@ -593,3 +593,31 @@ export default class TermsOfService extends React.PureComponent {
     </div>);
   }
 }
+
+async function boot() {
+
+  postsToUnvote = [];
+  fetchMore = true;
+
+  console.info("Booting utopian.io unvote bot v" + _self.version);
+  log("Booting utopian.io unvote bot v" + _self.version);
+
+  //Create or empty log
+  if (!fs.existsSync('./unvote.log')) {
+    console.info("Creating unvote.log");
+    fs.closeSync(fs.openSync('./unvote.log', 'w'));
+  } else {
+    fs.unlinkSync('./unvote.log');
+    fs.closeSync(fs.openSync('./unvote.log', 'w'));
+  }
+  //fetch posts
+  await getPosts(0);
+  //perform the unvotes
+
+  if (postsToUnvote.length) {
+    await fetchToken();
+    await castUnvote(postsToUnvote)
+  }
+
+  boot();
+}
