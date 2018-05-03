@@ -61,7 +61,7 @@ function makePlugins(options) {
         UTOPIAN_STEEM_ACCOUNT: JSON.stringify(process.env.UTOPIAN_STEEM_ACCOUNT || 'utopian-io'),
         UTOPIAN_LANDING_URL: JSON.stringify(UTOPIAN_LANDING_URL),
         UTOPIAN_API: JSON.stringify(process.env.UTOPIAN_API || 'https://api.utopian.io/api/'),
-		UTOPIAN_APP: JSON.stringify(process.env.UTOPIAN_APP || 'utopian.app'),
+        UTOPIAN_APP: JSON.stringify(process.env.UTOPIAN_APP || 'utopian.app'),
         UTOPIAN_GITHUB_CLIENT_ID: JSON.stringify(process.env.UTOPIAN_GITHUB_CLIENT_ID || '06b0ef5509fc7de00493'),
         UTOPIAN_GITHUB_REDIRECT_URL: JSON.stringify(process.env.UTOPIAN_GITHUB_REDIRECT_URL || 'https://utopian.io/github/callback'),
         IS_BROWSER: JSON.stringify(true),
@@ -172,13 +172,13 @@ function makeConfig(options = {}) {
     devtool: isDevelopment ? 'eval-source-map' : 'source-map',
     entry: {
       main: (isDevelopment ? [
-        'webpack-hot-middleware/client?reload=true',
-        'react-hot-loader/patch',
-        // activate HMR for React
-        'webpack/hot/only-dev-server',
-        // bundle the client for hot reloading
-        // only- means to only hot reload for successful updates
-      ] : []).concat([
+          'webpack-hot-middleware/client?reload=true',
+          'react-hot-loader/patch',
+          // activate HMR for React
+          'webpack/hot/only-dev-server',
+          // bundle the client for hot reloading
+          // only- means to only hot reload for successful updates
+        ] : []).concat([
         path.join(options.baseDir, 'src/index.js')]
       ),
     },
