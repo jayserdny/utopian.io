@@ -29,7 +29,9 @@
     "heroku-postbuild": "npm run build",
     "cleanup-public": "gulp cleanup-public",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "pre-commit": [
     "test",
@@ -68,7 +70,7 @@
     "express": "^4.15.4",
     "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^0.11.2",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "highlight.js": "^9.12.0",
     "history": "^4.6.3",
     "html-loader": "^0.4.5",
@@ -148,7 +150,8 @@
     "url-search-params-polyfill": "^2.0.0",
     "webpack": "^2.6.1",
     "webpack-visualizer-plugin": "^0.1.5",
-    "xmldom": "^0.1.27"
+    "xmldom": "^0.1.27",
+    "snyk": "^1.104.2"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.1.5",
@@ -181,5 +184,6 @@
     }
   },
   "repository": "https://github.com/utopian-io/utopian.io.git",
-  "license": "GNU Public License v3.0"
+  "license": "GNU Public License v3.0",
+  "snyk": true
 }
