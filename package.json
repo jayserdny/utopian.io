@@ -61,7 +61,7 @@
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.0",
     "debug": "~2.2.0",
-    "del": "^3.0.0",
+    "del": "^8.0.0",
     "diff-match-patch": "^1.0.0",
     "dotenv": "^4.0.0",
     "embedjs": "^0.0.9",
